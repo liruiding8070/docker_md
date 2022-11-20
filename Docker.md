@@ -450,8 +450,8 @@ sudo systemctl restart docker
    ```
 
    ```shell
-   docker -run -id --name=c_nginx \
-   -p 80:800 \
+   docker run -id --name=c_nginx \
+   -p 80:80 \
    -v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf \
    -v $PWD/logs:/var/log/nginx \
    -v $PWD/html:/usr/share/nginx/html \
@@ -459,7 +459,7 @@ sudo systemctl restart docker
    ```
 
    - 参数说明：
-     - `-p 80:800`：将容器的80端口映射到宿主机的80端口
+     - `-p 80:80`：将容器的80端口映射到宿主机的80端口
      - `-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf`：将主机当前目录下的`/conf/nginx.conf`挂载到容器的`:/etc/nginx/nginx.conf`配置目录
      - `-v $PWD/html:/usr/share/nginx/html`：将主机当前目录挂载到容器的`/val/log/nginx`日志目录
 
